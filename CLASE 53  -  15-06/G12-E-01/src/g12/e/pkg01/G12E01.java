@@ -26,8 +26,8 @@ public class G12E01 {
         ArrayList<Animal> animales = new ArrayList<>();
         
         Animal perro1 = new Perro("Pibu","Balanceado",1,"Pitbull");
-        Animal gato1 = new Gato("Mishifus","Balanceado",1,"Naranjoso");
-        Animal caballo1 = new Caballo("Manso","Fardo",1,"Alazan");
+        Animal gato1 = new Gato("Mishifus","Balanceado",2,"Naranjoso");
+        Animal caballo1 = new Caballo("Manso","Fardo",5,"Alazan");
         
         animales.add(perro1);
         animales.add(gato1);
