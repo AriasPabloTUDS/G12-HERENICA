@@ -15,6 +15,7 @@ package Entidades;
 
 import Entidades.Enum.Color;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *
@@ -27,6 +28,8 @@ public class Electrodomestico {
     protected Character consumoEnergetico;
     protected int peso;
     protected Character[] letraConsumo = {'A', 'B', 'C', 'D', 'E', 'F'};
+    private Scanner leer = new Scanner(System.in);
+    private Electrodomestico electrodomestico;
 
     //    • Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
 //sino es correcta usara la letra F por defecto. Este método se debe invocar al crear el
@@ -111,10 +114,28 @@ public class Electrodomestico {
     public void setPeso(int peso) {
         this.peso = peso;
     }
+    
+    public Electrodomestico crearElectrodomestico(){
+        
+        System.out.println("Crear electrodoméstico");
+        System.out.println("Ingrese el precio: ");
+        double precio = leer.nextDouble();
+        System.out.println("Ingrese el color: ");
+        String color = leer.next();
+        System.out.println("Ingrese el consumo energético: ");
+        char cEnerg = leer.next().charAt(0);
+        System.out.println("Ingrese el peso: ");
+        int peso = leer.nextInt();
+        return electrodomestico = new Electrodomestico(precio, color, cEnerg, peso);
+        
+    }
 
     @Override
     public String toString() {
-        return "Electrodomestico{" + "precio=" + precio + ", color=" + color + ", consumoEnergetico=" + consumoEnergetico + ", peso=" + peso + '}';
+        return "Electrodomestico{" + "precio=" + precio + ", color=" + color + ", consumoEnergetico=" + consumoEnergetico + ", peso=" + peso +  '}';
     }
+
+ 
+   
 
 }

@@ -1,11 +1,7 @@
 /*
  
 
-• Metodo crearElectrodomestico(): le pide la información al usuario y llena el
-electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
-precio se le da un valor base de $1000.
-• Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
-precio. Esta es la lista de precios:
+
 
 A continuación, se debe crear una subclase llamada Lavadora, con el atributo carga,
 además de los atributos heredados.
@@ -63,6 +59,7 @@ el precio final de los dos electrodomésticos.
 package g12.e.pkg02;
 
 import Entidades.Electrodomestico;
+import Entidades.Lavadora;
 
 /**
  *
@@ -75,9 +72,18 @@ public class G12E02 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        Electrodomestico electrodomestico = new Electrodomestico(100000.50, "azul", 'G', 20);
-        
+
+        Electrodomestico electrodomestico = new Electrodomestico();
+        Electrodomestico elec1;
+        Lavadora l1 = new Lavadora();
+        Lavadora l2 = new Lavadora();
+////        
+////        elec1 = electrodomestico.crearElectrodomestico();
+////        System.out.println(elec1.toString());
+        l1.crearLavadora();
+        l2.crearLavadora();
+        System.out.println(l1);
+        System.out.println(l2);
     }
-    
+
 }
