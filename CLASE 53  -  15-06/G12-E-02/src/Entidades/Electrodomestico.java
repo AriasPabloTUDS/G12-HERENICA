@@ -13,65 +13,23 @@ objeto y no será visible.
  */
 package Entidades;
 
-import Entidades.Enum.Color;
-import java.util.Objects;
 import java.util.Scanner;
 
 /**
  *
  * @author Pablo
  */
-public class Electrodomestico {
+public abstract class Electrodomestico {
 
     protected Double precio;
     protected String color;
     protected Character consumoEnergetico;
     protected int peso;
-    protected Character[] letraConsumo = {'A', 'B', 'C', 'D', 'E', 'F'};
     private Scanner leer = new Scanner(System.in);
-    private Electrodomestico electrodomestico;
 
-    //    • Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
-//sino es correcta usara la letra F por defecto. Este método se debe invocar al crear el
-//objeto y no será visible.
-    private void comprobarConsumoEnergetico(Character letra) {
-        boolean verif = false;
-        for (Character elemento : letraConsumo) {
-            if (Objects.equals(elemento, letra)) {
-                verif = true;
-            }
-        }
-        if (verif) {
-            this.consumoEnergetico = letra;
-            System.out.println("La letra " + letra + " es correcta");
-        } else {
-            System.out.println("La letra " + letra + " es incorrecta se setea 'F' por defecto");
-            consumoEnergetico = 'F';
-        }
+    
 
-    }
 
-//    • Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
-//usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
-//blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
-//minúsculas. Este método se invocará al crear el objeto y no será visible.
-    private void comprobarColor(String color) {
-        boolean verif = false;
-        for (Color aux : Color.values()) {
-            String c = aux.getNombre();
-            if (c.equalsIgnoreCase(color)) {
-                verif = true;
-            }
-        }
-        if (verif) {
-            System.out.println("El color " + color + " es correcto");
-            this.color = color;
-        } else {
-            System.out.println("El color " + color + " es incorrecta se setea ''blanco'' por defecto");
-            this.color = "blanco";
-        }
-
-    }
 
     public Electrodomestico() {
     }
@@ -79,8 +37,7 @@ public class Electrodomestico {
     public Electrodomestico(Double precio, String color, char consumoEnergetico, int peso) {
         this.precio = precio;
         this.peso = peso;
-        comprobarColor(color);
-        comprobarConsumoEnergetico(consumoEnergetico);
+        
     }
 
     public Double getPrecio() {
@@ -115,20 +72,7 @@ public class Electrodomestico {
         this.peso = peso;
     }
     
-    public Electrodomestico crearElectrodomestico(){
-        
-        System.out.println("Crear electrodoméstico");
-        System.out.println("Ingrese el precio: ");
-        double precio = leer.nextDouble();
-        System.out.println("Ingrese el color: ");
-        String color = leer.next();
-        System.out.println("Ingrese el consumo energético: ");
-        char cEnerg = leer.next().charAt(0);
-        System.out.println("Ingrese el peso: ");
-        int peso = leer.nextInt();
-        return electrodomestico = new Electrodomestico(precio, color, cEnerg, peso);
-        
-    }
+    
 
     @Override
     public String toString() {

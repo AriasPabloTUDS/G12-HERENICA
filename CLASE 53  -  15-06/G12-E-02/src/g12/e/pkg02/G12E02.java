@@ -58,8 +58,7 @@ el precio final de los dos electrodomésticos.
  */
 package g12.e.pkg02;
 
-import Entidades.Electrodomestico;
-import Entidades.Lavadora;
+import Entidades.Servicios.ElectrodomesticoServicio;
 
 /**
  *
@@ -73,17 +72,9 @@ public class G12E02 {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Electrodomestico electrodomestico = new Electrodomestico();
-        Electrodomestico elec1;
-        Lavadora l1 = new Lavadora();
-        Lavadora l2 = new Lavadora();
-////        
-////        elec1 = electrodomestico.crearElectrodomestico();
-////        System.out.println(elec1.toString());
-        l1.crearLavadora();
-        l2.crearLavadora();
-        System.out.println(l1);
-        System.out.println(l2);
+        ElectrodomesticoServicio elect = new ElectrodomesticoServicio();
+        elect.menu();
+
     }
 
 }
